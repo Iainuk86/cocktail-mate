@@ -10,12 +10,12 @@ import javax.persistence.*;
 public class Cocktail {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY);
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name="name")
     private String name;
-    
+
     @Column(name="alcoholic")
     private boolean alcoholic;
 
