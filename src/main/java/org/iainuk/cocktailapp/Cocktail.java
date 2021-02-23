@@ -2,18 +2,35 @@ package org.iainuk.cocktailapp;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name="cocktail")
 public class Cocktail {
 
-    int number = 12;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY);
+    private long id;
 
-    String result = switch (number) {
-        case 1, 2 -> "One or two";
-        default -> "Unknown";
-    };
+    @Column(name="name")
+    private String name;
+    
+    @Column(name="alcoholic")
+    private boolean alcoholic;
+
+    @Column(name="flavour_profile")
+    private String flavourProfile;
+
+    @Column(name="method")
+    private String method;
+
+    @Column(name="glass")
+    private String glass;
+
+    @Column(name="ice")
+    private String ice;
+
+    @Column(name="garnish")
+    private String garnish;
 }
