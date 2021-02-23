@@ -3,6 +3,8 @@ package org.iainuk.cocktailapp;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -11,7 +13,8 @@ public class Cocktail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name="cocktail_id")
+    private int id;
 
     @Column(name="name")
     private String name;
@@ -33,4 +36,18 @@ public class Cocktail {
 
     @Column(name="garnish")
     private String garnish;
+
+    @OneToMany(
+            fetch=FetchType.LAZY,
+            mappedBy="cocktail",
+            cascade=CascadeType.ALL)
+    private List<Ingredient> ingredients;
+
+    private void addIngredient(Ingredient ingredient)
+    {
+        if (ingredients == null)
+            ingredients = new ArrayList<>();
+
+        ingredients.add(ingredient);
+    }
 }
