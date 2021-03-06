@@ -1,6 +1,7 @@
 package org.iainuk.cocktailapp;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name="cocktail")
 public class Cocktail {
 
@@ -21,6 +23,9 @@ public class Cocktail {
 
     @Column(name="alcoholic")
     private boolean alcoholic;
+
+    @Column(name="taste")
+    private String taste;
 
     @Column(name="flavour_profile")
     private String flavourProfile;
@@ -49,5 +54,17 @@ public class Cocktail {
             ingredients = new ArrayList<>();
 
         ingredients.add(ingredient);
+    }
+
+    public Cocktail(String name, boolean alcoholic, String taste, String flavour,
+                    String method, String glass, String ice, String garnish)
+    {
+        this.name = name;
+        this.alcoholic = alcoholic;
+        this.flavourProfile = flavour;
+        this.method = method;
+        this.glass = glass;
+        this.ice = ice;
+        this.garnish = garnish;
     }
 }

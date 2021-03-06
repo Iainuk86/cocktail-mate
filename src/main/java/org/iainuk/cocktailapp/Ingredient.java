@@ -1,11 +1,13 @@
 package org.iainuk.cocktailapp;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name="ingredient")
 public class Ingredient {
 
@@ -30,4 +32,11 @@ public class Ingredient {
     @JoinColumn(name="cocktail_id")
     private Cocktail cocktail;
 
+    public Ingredient(String name, String metric, String imp, Cocktail cocktail)
+    {
+        this.name = name;
+        this.quantityMetric = metric;
+        this.quantityImperial = imp;
+        this.cocktail = cocktail;
+    }
 }
