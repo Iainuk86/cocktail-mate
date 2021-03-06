@@ -48,7 +48,7 @@ public class Cocktail {
             cascade=CascadeType.ALL)
     private List<Ingredient> ingredients;
 
-    private void addIngredient(Ingredient ingredient)
+    public void addIngredient(Ingredient ingredient)
     {
         if (ingredients == null)
             ingredients = new ArrayList<>();
@@ -61,6 +61,7 @@ public class Cocktail {
     {
         this.name = name;
         this.alcoholic = alcoholic;
+        this.taste = taste;
         this.flavourProfile = flavour;
         this.method = method;
         this.glass = glass;
