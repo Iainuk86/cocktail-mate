@@ -13,32 +13,30 @@ public class CocktailAppApplication {
         ConfigurableApplicationContext ctx = SpringApplication.run(CocktailAppApplication.class, args);
         CocktailRepo cr = ctx.getBean("cocktailRepo", CocktailRepo.class);
 
-        String name = "Hemingway Special";
+        String name = "Gin Fizz";
 
         boolean alcoholic = true;
 
-        String taste = "Strong and sour";
+        String taste = "Sweet or Sour";
 
-        String flavourProfile = "Rum with zesty citrus notes";
+        String flavourProfile = "Refreshing crisp lemon";
 
-        String method = "Put all ingredients into a shaker, " +
-                        "add cubed ice and shake for about 10 seconds.\n\nFine strain into a clean, chilled glass " +
-                        "and garnish.";
+        String method = "Add gin, lemon juice and syrup to a shaker, add cubed ice and shake for about 10 seconds.\n" +
+                        "Strain into fresh glass with ice, top with soda water and garnish.\n";
 
-        String glass = "Martini / Coupe";
+        String glass = "Collins / Tall";
 
-        String ice = "None";
+        String ice = "Cubed";
 
-        String garnish = "Lime wedge/wheel or cherry";
+        String garnish = "Lemon twist/wedge";
 
         Cocktail newCock = new Cocktail(name, alcoholic, taste, flavourProfile,
                                         method, glass, ice, garnish);
 
-        newCock.addIngredient(new Ingredient("White rum", "45ml", "1.5oz", newCock));
-        newCock.addIngredient(new Ingredient("Lime juice", "15ml", "1/2oz", newCock));
-        newCock.addIngredient(new Ingredient("Grapefruit juice", "15ml", "1/2oz", newCock));
-        newCock.addIngredient(new Ingredient("Maraschino Liqueur", "10ml", "1/3oz", newCock));
-        newCock.addIngredient(new Ingredient("Simple syrup", "Dash", "Dash", newCock));
+        newCock.addIngredient(new Ingredient("Gin", "60ml", "2oz", newCock));
+        newCock.addIngredient(new Ingredient("Lemon juice", "30ml", "1oz", newCock));
+        newCock.addIngredient(new Ingredient("Simple syrup", "30ml", "1oz", newCock));
+        newCock.addIngredient(new Ingredient("Soda water", "Top with", "Top with", newCock));
 
         cr.save(newCock);
     }
