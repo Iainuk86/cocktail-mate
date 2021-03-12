@@ -9030,7 +9030,7 @@ h1, h2, h3, h4, h5,
     background: rgba(255, 255, 255, 0.1); }
 
 .billing-heading {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 500; }
 
 .billing-form .form-group {
@@ -9961,3 +9961,30 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+.searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #1c1e24;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input{
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color:transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+  padding: 0 10px;
+  width: 300px;
+  caret-color:red;
+  transition: width 0.4s linear;
+}

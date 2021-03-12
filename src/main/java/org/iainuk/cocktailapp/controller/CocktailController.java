@@ -11,4 +11,9 @@ public class CocktailController {
     @Autowired
     private CocktailRepo cocktailRepo;
 
+    @GetMapping("/cocktail-single")
+    public String showSingle() {
+
+        return "cocktail-single";
+    }
 }
