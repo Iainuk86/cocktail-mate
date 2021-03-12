@@ -57,7 +57,7 @@
 
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a th:href="@{/}" class="nav-link">Home</a></li>
+                        <li class="nav-item active"><a th:href="@{home}" class="nav-link">Home</a></li>
                         <li class="nav-item"><a th:href="@{cocktails}" class="nav-link">Cocktail List</a></li>
                         <li class="nav-item"><a th:href="@{contact}" class="nav-link">Contact</a></li>
                         <li class="nav-item">
@@ -85,8 +85,8 @@
                             <h1 class="mb-4">It's <span>cocktail</span> night?</h1>
                             <h1 class="mb-4"><span>Ask</span> your <span>Mate</span>.</h1>
                             <p>
-                                <a href="#" class="btn btn-primary py-2 px-4">Show all</a>
-                                <a th:href="@{cocktail-single}" class="btn btn-white btn-outline-white py-2 px-4">Random cocktail</a>
+                                <a th:href="@{cocktails}" class="btn btn-primary py-2 px-4">Show all</a>
+                                <a th:href="@{random}" class="btn btn-white btn-outline-white py-2 px-4">Random cocktail</a>
                                 <a th:href="@{helper}" class="btn btn-white btn-outline-white py-2 px-4">Help me decide</a>
                             </p>
                         </div>
