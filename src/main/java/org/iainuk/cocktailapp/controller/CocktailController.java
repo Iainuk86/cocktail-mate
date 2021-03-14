@@ -53,11 +53,12 @@ public class CocktailController {
     {
         List<Cocktail> cocktails = null;
 
-        if (keyword != null)
-        {
-            cocktails = cocktailRepo.search(keyword);
-        } else {
+        if (keyword == null) {
             cocktails = cocktailRepo.findAll();
+        } else if (keyword.matches("(?i)whiskey|gin|rum|vodka|tequila|brandy|alcohol free")) {
+            cocktails = cocktailRepo.searchByMain(keyword);
+        } else {
+            cocktails = cocktailRepo.search(keyword);
         }
 
         model.addAttribute("cocktails", cocktails);

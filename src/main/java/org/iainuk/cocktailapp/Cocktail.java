@@ -42,6 +42,9 @@ public class Cocktail {
     @Column(name="garnish")
     private String garnish;
 
+    @Column(name="main")
+    private String main;
+
     @OneToMany(
             fetch=FetchType.LAZY,
             mappedBy="cocktail",
