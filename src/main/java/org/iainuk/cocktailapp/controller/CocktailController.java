@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -40,6 +42,23 @@ public class CocktailController {
     public String showCocktails(Model model)
     {
         Iterable<Cocktail> cocktails = cocktailRepo.findAll();
+
+        model.addAttribute("cocktails", cocktails);
+
+        return "cocktails";
+    }
+
+    @PostMapping("/cocktails")
+    public String searchQuery(@ModelAttribute("keyword") String keyword, Model model)
+    {
+        List<Cocktail> cocktails = null;
+
+        if (keyword != null)
+        {
+            cocktails = cocktailRepo.search(keyword);
+        } else {
+            cocktails = cocktailRepo.findAll();
+        }
 
         model.addAttribute("cocktails", cocktails);
 

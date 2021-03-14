@@ -1,14 +1,19 @@
 package org.iainuk.cocktailapp.dao;
 
 import org.iainuk.cocktailapp.Cocktail;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface CocktailRepo extends CrudRepository<Cocktail, Integer> {
+public interface CocktailRepo extends JpaRepository<Cocktail, Integer> {
 
     List<Cocktail> findAllByOrderByName();
+
+    @Query("SELECT c FROM Cocktail c WHERE LOWER(c.name) LIKE LOWER(:keyword)")
+    List<Cocktail> search(@Param("keyword") String keyword);
 
 }
