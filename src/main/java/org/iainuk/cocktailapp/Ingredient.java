@@ -39,4 +39,9 @@ public class Ingredient {
         this.quantityImperial = imp;
         this.cocktail = cocktail;
     }
+
+    public String toString()
+    {
+        return quantityMetric + " " + name + ".";
+    }
 }

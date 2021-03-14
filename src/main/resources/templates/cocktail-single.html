@@ -79,7 +79,7 @@
 						<p class="breadcrumbs mb-0">
 							<span class="mr-2"><a th:href="@{home}">Home  <i class="fa fa-chevron-right"></i></a></span>
 							<span><a th:href="@{cocktails}">Cocktails  <i class="fa fa-chevron-right"></i></a></span>
-						<h2 class="mb-0 bread">Random Cocktail</h2>
+						<h2 class="mb-0 bread" th:text="${cocktail.name}">Cocktail Name</h2>
 			 		 </div>
 				</div>
 		  	</div>
@@ -89,14 +89,16 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 mb-5 ftco-animate">
-						<a href="images/prod-1.jpg" class="image-popup prod-img-bg"><img src="images/prod-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+						<img th:src="@{${'/images/cocktails/' + cocktail.id + '.jpg'}}" class="img-fluid" alt="No cocktail image found.">
 					</div>
 					<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-						<h2>Name Placeholder</h2>
+						<h2 th:text="${cocktail.name}">Name Placeholder</h2>
 
-						<p class="price"><span>Flavour profile placeholder</span></p>
-						<p>Ingredients placeholder.</p>
-						<p>Method placeholder. (Make photo smaller)</p>
+						<p class="price"><span th:text="'Flavour: ' + ${cocktail.flavourProfile}">Flavour profile placeholder</span></p>
+						<ul th:each="ingredient : ${cocktail.ingredients}">
+							<li th:text="${ingredient}" />
+						</ul>
+						<p th:text="${cocktail.method}">Method placeholder.</p>
 						<div class="w-100"></div>
 					</div>
 				</div>
