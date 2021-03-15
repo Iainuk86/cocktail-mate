@@ -39,7 +39,7 @@ public class ContactController {
 
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
-        
+
         mimeMessageHelper.setTo("iaindev86@gmail.com");
         mimeMessageHelper.setSubject(contact.getSubject());
         mimeMessageHelper.setText(content, true);
