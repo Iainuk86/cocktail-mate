@@ -1,4 +1,4 @@
-package org.iainuk.cocktailapp;
+package org.iainuk.cocktailapp.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

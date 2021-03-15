@@ -1,6 +1,6 @@
 package org.iainuk.cocktailapp.dao;
 
-import org.iainuk.cocktailapp.Cocktail;
+import org.iainuk.cocktailapp.entities.Cocktail;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

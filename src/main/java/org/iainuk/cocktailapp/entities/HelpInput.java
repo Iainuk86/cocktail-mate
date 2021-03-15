@@ -1,4 +1,4 @@
-package org.iainuk.cocktailapp;
+package org.iainuk.cocktailapp.entities;
 
 import lombok.Data;
 
@@ -6,8 +6,7 @@ import lombok.Data;
 public class HelpInput {
 
     private String taste;
-
     private String spirit;
-
     private String weather;
+
 }

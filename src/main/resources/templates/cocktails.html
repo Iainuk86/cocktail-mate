@@ -1,62 +1,68 @@
 <!DOCTYPE html>
-<html   lang="en"
-		xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>Cocktail Mate</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet"
+			  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			  crossorigin="anonymous">
 
+		<!-- FontAwesome CSS -->
+		<link rel="stylesheet"
+			  href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+			  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+			  crossorigin="anonymous">
+		<link rel="stylesheet"
+			  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+		<!-- Local CSS files -->
 		<link rel="stylesheet" href="css/animate.css">
-
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
 	<body>
+		<!-- Header -->
 		<div class="wrap">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 d-flex align-items-center">
 						<p class="mb-0 phone pl-md-2">
-							<a class="mr-2"><span class="fa fa-chain"></span> Link to portfolio site</a>
-							<a><span class="fa fa-paper-plane mr-1"></span> iainuk@protonmail.com</a>
+							<a href="#" class="mr-2"><span class="fa fa-chain"></span> Link to portfolio site</a>
+							<a href="mailto:iainuk@protonmail.com"><span class="fa fa-paper-plane mr-1"></span> iainuk@protonmail.com</a>
 						</p>
 					</div>
 					<div class="col-md-6 d-flex justify-content-md-end">
 						<div class="social-media mr-4">
 							<p class="mb-0 d-flex">
-								<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">GitHub</i></span></a>
-								<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-								<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">Linked In</i></span></a>
+								<a href="https://www.github.com/Iainuk86" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">GitHub</i></span></a>
+								<a href="https://www.facebook.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+								<a href="https://www.linkedin.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">Linked In</i></span></a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- End of header -->
 
+		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 			<div class="container">
-				<a class="navbar-brand" th:href="@{home}">Cocktail <span>Mate</span></a>
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="oi oi-menu"></span> Menu
-				</button>
-
+				<a class="navbar-brand" th:href="@{/home}">Cocktail <span>Mate</span></a>
 				<div class="collapse navbar-collapse" id="ftco-nav">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a th:href="@{/}" class="nav-link">Home</a></li>
-						<li class="nav-item"><a th:href="@{cocktails}" class="nav-link">Cocktail List</a></li>
-						<li class="nav-item"><a th:href="@{contact}" class="nav-link">Contact</a></li>
+						<li class="nav-item active"><a th:href="@{/home}" class="nav-link">Home</a></li>
+						<li class="nav-item"><a th:href="@{/cocktails}" class="nav-link">Cocktail List</a></li>
+						<li class="nav-item"><a th:href="@{/contact}" class="nav-link">Contact</a></li>
 						<li class="nav-item">
-							<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="searchForm" name="searchForm">
+							<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="searchForm" name="searchForm">
 								<div class="container h-100">
 									<div class="d-flex justify-content-center h-100">
 										<div class="searchbar" onfocus="this.classList.add('wide')">
@@ -71,8 +77,9 @@
 				</div>
 			</div>
 		</nav>
-		<!-- END nav -->
-    
+		<!-- End of Navbar -->
+
+		<!-- Top Background section -->
 		<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
 		  	<div class="overlay"></div>
 		    <div class="container">
@@ -84,10 +91,13 @@
 				</div>
 		    </div>
 		</section>
+		<!-- End of Top Background section -->
 
+		<!-- Main section -->
     	<section class="ftco-section">
 			<div class="container">
 				<div class="row">
+					<!-- List of cocktails -->
 					<div class="col-md-9">
 						<div class="row">
 							<h2 th:if="${cocktails.isEmpty()}">No cocktails found. Please refine your search.</h2>
@@ -108,90 +118,96 @@
 							</div>
 						</div>
 					</div>
+					<!-- End of cocktail list -->
 
+					<!-- Spirit menu -->
 					<div class="col-md-3">
 						<div class="sidebar-box ftco-animate">
               				<div class="categories">
                 				<h3>Pick a spirit ...</h3>
-									<ul class="p-0">
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="whiskey">
-												<input type="hidden" th:value="'whiskey'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['whiskey'].submit()">Whiskey <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="vodka">
-												<input type="hidden" th:value="'vodka'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['vodka'].submit()">Vodka <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="gin">
-												<input type="hidden" th:value="'gin'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['gin'].submit()">Gin <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="rum">
-												<input type="hidden" th:value="'rum'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['rum'].submit()">Rum <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="tequila">
-												<input type="hidden" th:value="'tequila'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['tequila'].submit()">Tequila <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="brandy">
-												<input type="hidden" th:value="'brandy'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['brandy'].submit()">Brandy <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="none">
-												<input type="hidden" th:value="'none'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['none'].submit()">Other <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-										<li>
-											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="alcoholFree">
-												<input type="hidden" th:value="'alcohol free'" name="keyword" />
-												<a href="javascript:void(0)" onclick="document.forms['alcoholFree'].submit()">No alcohol please! <span class="fa fa-chevron-right"></span></a>
-											</form>
-										</li>
-									</ul>
+								<ul class="p-0">
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="whiskey">
+											<input type="hidden" th:value="'whiskey'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['whiskey'].submit()">Whiskey <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="vodka">
+											<input type="hidden" th:value="'vodka'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['vodka'].submit()">Vodka <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="gin">
+											<input type="hidden" th:value="'gin'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['gin'].submit()">Gin <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="rum">
+											<input type="hidden" th:value="'rum'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['rum'].submit()">Rum <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="tequila">
+											<input type="hidden" th:value="'tequila'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['tequila'].submit()">Tequila <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="brandy">
+											<input type="hidden" th:value="'brandy'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['brandy'].submit()">Brandy <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="none">
+											<input type="hidden" th:value="'none'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['none'].submit()">Other <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+									<li>
+										<form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="alcoholFree">
+											<input type="hidden" th:value="'alcohol free'" name="keyword" />
+											<a href="javascript:void(0)" onclick="document.forms['alcoholFree'].submit()">No alcohol please! <span class="fa fa-chevron-right"></span></a>
+										</form>
+									</li>
+								</ul>
               				</div>
             			</div>
 					</div>
+					<!-- End of spirit menu -->
 				</div>
 			</div>
 		</section>
+		<!-- End of Main section -->
 
+		<!-- Footer section -->
 		<footer class="ftco-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md">
 						<div class="ftco-footer-widget mb-1">
-							<h2 class="ftco-heading-2 logo"><a href="#">Cocktail <span>Mate</span></a></h2>
+							<h2 class="ftco-heading-2 logo"><a th:href="@{/home}">Cocktail <span>Mate</span></a></h2>
 							<p>Helping you when you can't help yourself.</p>
 							<ul class="ftco-footer-social list-unstyled mt-2">
-								<li class="ftco-animate"><a href="#"><span class="fa fa-github"></span></a></li>
-								<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-								<li class="ftco-animate"><a href="#"><span class="fa fa-linkedin"></span></a></li>
+								<li class="ftco-animate"><a href="https://www.github.com/Iainuk86"><span class="fa fa-github"></span></a></li>
+								<li class="ftco-animate"><a href="https://www.facebook.com"><span class="fa fa-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="https://www.linkedin.com"><span class="fa fa-linkedin"></span></a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-12 col-md">
 						<div class="ftco-footer-widget mb-4 ml-md-4">
-							<h2 class="ftco-heading-2">Information</h2>
+							<h2 class="ftco-heading-2">Navigation</h2>
 							<ul class="list-unstyled">
-								<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-								<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Cocktail List</a></li>
-								<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Cocktail Search</a></li>
-								<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+								<li><a th:href="@{/home}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+								<li><a th:href="@{/cocktails}"><span class="fa fa-chevron-right mr-2"></span>Cocktail List</a></li>
+								<li><a th:href="@{/helper}"><span class="fa fa-chevron-right mr-2"></span>Cocktail Helper</a></li>
+								<li><a th:href="@{/random}"><span class="fa fa-chevron-right mr-2"></span>Random Cocktail</a></li>
+								<li><a th:href="@{/contact}"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -201,45 +217,26 @@
 							<div class="block-23 mb-3">
 								<ul>
 									<li><span class="icon fa fa-map-pin"></span><span class="text">Lewisham, Sydney, Australia</span></li>
-									<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">0458 633 414</span></a></li>
-									<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">iainuk@protonmail.com</span></a></li>
+									<li><a href="#"><span class="icon fa fa-globe"></span><span class="text">Portfolio</span></a></li>
+									<li><a href="tel:0458633414"><span class="icon fa fa-phone"></span><span class="text">0458 633 414</span></a></li>
+									<li><a href="mailto:iainuk@protonmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">iainuk@protonmail.com</span></a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="container-fluid px-0 py-5 bg-black">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-
-							<p class="mb-0" style="color: rgba(255,255,255,.5);"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-						</div>
-					</div>
-				</div>
-			</div>
 		</footer>
-
-
-
-		<!-- loader -->
-		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+		<!-- End of footer -->
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-migrate-3.0.1.min.js"></script>
 		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.easing.1.3.js"></script>
 		<script src="js/jquery.waypoints.min.js"></script>
 		<script src="js/jquery.stellar.min.js"></script>
 		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
 		<script src="js/jquery.animateNumber.min.js"></script>
-		<script src="js/scrollax.min.js"></script>
 		<script src="js/main.js"></script>
   	</body>
 </html>

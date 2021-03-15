@@ -111,7 +111,7 @@
 											<span class="fa fa-phone"></span>
 										</div>
 										<div class="text">
-											<p><span>Phone:</span> <a href="tel://1234567920">0458 633 414</a></p>
+											<p><span>Phone:</span> <a href="tel://0458633414">0458 633 414</a></p>
 										</div>
 									</div>
 								</div>
@@ -141,35 +141,35 @@
 									<div class="col-md-8 offset-md-2 justify-content-center">
 										<div class="contact-wrap w-100 p-md-5 p-4">
 											<h3 class="mb-4">Or send me a message ...</h3>
-											<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+											<form th:method="POST" th:action="@{/contact}" th:object="${contact}" id="contactForm" name="contactForm" class="contactForm">
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="label" for="name">Full Name</label>
-															<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+															<input type="text" class="form-control" th:value="*{name}" name="name" id="name" placeholder="Name">
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="label" for="email">Email Address</label>
-															<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+															<input type="email" class="form-control" th:value="*{email}" name="email" id="email" placeholder="Email">
 														</div>
 													</div>
 													<div class="col-md-12">
 														<div class="form-group">
 															<label class="label" for="subject">Subject</label>
-															<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+															<input type="text" class="form-control" th:value="*{subject}" name="subject" id="subject" placeholder="Subject">
 														</div>
 													</div>
 													<div class="col-md-12">
 														<div class="form-group">
 															<label class="label">Message</label>
-															<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+															<textarea name="message" class="form-control" th:value="*{message}" id="message" cols="30" rows="4" placeholder="Message"></textarea>
 														</div>
 													</div>
 													<div class="col-md-12">
 														<div class="form-group">
-															<input type="submit" value="Send Message" class="btn btn-primary">
+															<input type="submit" onclick="alert('Your message has been sent.')" value="Send Message" class="btn btn-primary">
 															<div class="submitting"></div>
 														</div>
 													</div>
