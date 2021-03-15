@@ -1,6 +1,7 @@
 package org.iainuk.cocktailapp.controller;
 
 import org.iainuk.cocktailapp.Cocktail;
+import org.iainuk.cocktailapp.HelpInput;
 import org.iainuk.cocktailapp.dao.CocktailRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,11 +56,42 @@ public class CocktailController {
 
         if (keyword == null) {
             cocktails = cocktailRepo.findAll();
+        } else if (keyword.equals("none")) {
+            cocktails = cocktailRepo.searchNoStrongSpirits();
         } else if (keyword.matches("(?i)whiskey|gin|rum|vodka|tequila|brandy|alcohol free")) {
             cocktails = cocktailRepo.searchByMain(keyword);
         } else {
             cocktails = cocktailRepo.search(keyword);
         }
+
+        model.addAttribute("cocktails", cocktails);
+
+        return "cocktails";
+    }
+
+    @GetMapping("/helper")
+    public String showHelper(Model model)
+    {
+        model.addAttribute("input", new HelpInput());
+
+        return "helper";
+    }
+
+    @PostMapping("/helper")
+    public String processHelper(HelpInput input, Model model)
+    {
+        List<Cocktail> cocktails =  null;
+
+        String taste = input.getTaste();
+        String spirit = input.getSpirit();
+        String weather = input.getWeather();
+
+        if (spirit.equals("none")) {
+            if (weather.equals("hot"))  { cocktails = cocktailRepo.helperQueryNonAlcoholicHot(taste); }
+            else                        { cocktails = cocktailRepo.helperQueryNonAlcoholicCold(taste); }
+        }
+        else if (weather.equals("hot")) { cocktails = cocktailRepo.helperQueryAlcoholicHot(taste, spirit); }
+        else                            { cocktails = cocktailRepo.helperQueryAlcoholicCold(taste, spirit); }
 
         model.addAttribute("cocktails", cocktails);
 

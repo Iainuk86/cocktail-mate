@@ -92,7 +92,7 @@
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-xl-10 ftco-animate">
-						<form action="#" class="billing-form">
+						<form method="POST" th:action="@{/helper}" th:object="${input}" id="helpForm" name="helpForm" class="billing-form">
 							<h2 class="mb-4 billing-heading">Just some quick questions for you</h2>
 							<div class="row align-items-end">
 								<div class="col-md-6">
@@ -100,7 +100,7 @@
 										<label>Preferred taste group</label>
 										<div class="select-wrap">
 											<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-											<select name="taste" id="taste" class="form-control">
+											<select name="taste" id="taste" class="form-control" th:field="*{taste}">
 												<option value="sweet">Sweet</option>
 												<option value="sour">Sour</option>
 												<option value="bitter">Bitter</option>
@@ -116,7 +116,7 @@
 										<label>Pick your poison ...</label>
 										<div class="select-wrap">
 											<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-											<select name="spirit" id="spirit" class="form-control">
+											<select name="spirit" id="spirit" class="form-control" th:value="*{spirit}">
 												<option value="vodka">Vodka</option>
 												<option value="gin">Gin</option>
 												<option value="rum">Rum</option>
@@ -134,7 +134,7 @@
 										<label>Is it hot today?</label>
 										<div class="select-wrap">
 											<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-											<select name="spirit" id="weather" class="form-control">
+											<select name="weather" id="weather" class="form-control" th:value="*{weather}">
 												<option value="hot">Yes</option>
 												<option value="cold">No</option>
 											</select>
@@ -143,21 +143,22 @@
 								</div>
 								<div class="w-100"></div>
 							</div>
-						</form>
 
-						<div class="row col-md-8 offset-md-2">
-							<div class="form-group">
-								<div class="col-md-12">
-									<div class="checkbox">
-										<label><input type="checkbox"> I have seen and accept the consequences of my own actions</label>
+							<div class="row col-md-8 offset-md-2">
+								<div class="form-group">
+									<div class="col-md-12">
+										<div class="checkbox">
+											<label><input type="checkbox"> I have seen and accept the consequences of my own actions</label>
+										</div>
 									</div>
 								</div>
+								<div class="w-100"></div>
+								<div class="row col-md-6 offset-md-3">
+									<input type="hidden" />
+									<p><a href="javascript:void(0)" onclick="document.forms['helpForm'].submit()" class="btn btn-primary justify-content-center">Hurry up I'm thirsty</a></p>
+								</div>
 							</div>
-							<div class="w-100"></div>
-							<div class="row col-md-6 offset-md-3">
-								<p><a href="#"class="btn btn-primary justify-content-center">Hurry up I'm thirsty</a></p>
-							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>

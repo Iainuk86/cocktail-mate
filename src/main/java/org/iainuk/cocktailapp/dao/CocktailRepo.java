@@ -19,4 +19,27 @@ public interface CocktailRepo extends JpaRepository<Cocktail, Integer> {
     @Query("SELECT c FROM Cocktail c WHERE LOWER(c.main) LIKE CONCAT('%', LOWER(:keyword), '%')")
     List<Cocktail> searchByMain(@Param("keyword") String keyword);
 
+    @Query("SELECT c FROM Cocktail c WHERE LOWER(c.main) NOT IN ('whiskey', 'rum', 'gin', 'vodka', 'brandy', 'tequila')")
+    List<Cocktail> searchNoStrongSpirits();
+
+    @Query("SELECT c FROM Cocktail c WHERE LOWER(c.taste) LIKE CONCAT('%', LOWER(:taste), '%')" +
+            "AND LOWER(c.main) LIKE LOWER(:spirit)" +
+            "AND LOWER(c.flavourProfile) LIKE '%refresh%'")
+    List<Cocktail> helperQueryAlcoholicHot(String taste, String spirit);
+
+    @Query("SELECT c FROM Cocktail c WHERE LOWER(c.taste) LIKE CONCAT('%', LOWER(:taste), '%')" +
+            "AND LOWER(c.main) LIKE LOWER(:spirit)" +
+            "AND LOWER(c.flavourProfile) NOT LIKE '%refresh%'")
+    List<Cocktail> helperQueryAlcoholicCold(String taste, String spirit);
+
+    @Query("SELECT c FROM Cocktail c WHERE LOWER(c.taste) LIKE CONCAT('%', LOWER(:taste), '%')" +
+            "AND LOWER(c.main) NOT IN ('whiskey', 'rum', 'gin', 'vodka', 'brandy', 'tequila')" +
+            "AND LOWER(c.flavourProfile) LIKE '%refresh%'")
+    List<Cocktail> helperQueryNonAlcoholicHot(String taste);
+
+    @Query("SELECT c FROM Cocktail c WHERE LOWER(c.taste) LIKE CONCAT('%', LOWER(:taste), '%')" +
+            "AND LOWER(c.main) NOT IN ('whiskey', 'rum', 'gin', 'vodka', 'brandy', 'tequila')" +
+            "AND LOWER(c.flavourProfile) NOT LIKE '%refresh%'")
+    List<Cocktail> helperQueryNonAlcoholicCold(String taste);
+
 }

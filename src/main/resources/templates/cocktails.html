@@ -59,8 +59,8 @@
 							<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="searchForm" name="searchForm">
 								<div class="container h-100">
 									<div class="d-flex justify-content-center h-100">
-										<div class="searchbar">
-											<input class="search_input" type="text" name="keyword" id="keyword" placeholder="Search..." />
+										<div class="searchbar" onfocus="this.classList.add('wide')">
+											<input class="search_input" type="text" name="keyword" id="keyword" placeholder="Search..." autocomplete="off" />
 											<a href="javascript:void(0)" onclick="document.forms['searchForm'].submit()"><i class="fas fa-search"></i></a>
 										</div>
 									</div>
@@ -148,6 +148,12 @@
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="brandy">
 												<input type="hidden" th:value="'brandy'" name="keyword" />
 												<a href="javascript:void(0)" onclick="document.forms['brandy'].submit()">Brandy <span class="fa fa-chevron-right"></span></a>
+											</form>
+										</li>
+										<li>
+											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="none">
+												<input type="hidden" th:value="'none'" name="keyword" />
+												<a href="javascript:void(0)" onclick="document.forms['none'].submit()">Other <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 										<li>

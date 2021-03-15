@@ -9962,7 +9962,16 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
 
-.searchbar{
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #1c1e24;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.searchbar {
   margin-bottom: auto;
   margin-top: auto;
   height: 60px;
@@ -9980,10 +9989,10 @@ textarea.form-control {
   caret-color:transparent;
   line-height: 40px;
   transition: width 0.4s linear;
+  transition-delay: 5s;
 }
 
 .searchbar:hover > .search_input{
-  padding: 0 10px;
   width: 300px;
   caret-color:red;
   transition: width 0.4s linear;
