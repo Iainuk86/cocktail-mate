@@ -56,12 +56,12 @@
 						<li class="nav-item"><a th:href="@{cocktails}" class="nav-link">Cocktail List</a></li>
 						<li class="nav-item"><a th:href="@{contact}" class="nav-link">Contact</a></li>
 						<li class="nav-item">
-							<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="searchForm">
+							<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="searchForm" name="searchForm">
 								<div class="container h-100">
 									<div class="d-flex justify-content-center h-100">
 										<div class="searchbar">
-											<input class="search_input" type="text" name="keyword" id="keyword" th:value="${keyword}" placeholder="Search..." />
-											<a href="#" onclick="document.forms['searchForm'].submit()"><i class="fas fa-search"></i></a>
+											<input class="search_input" type="text" name="keyword" id="keyword" placeholder="Search..." />
+											<a href="javascript:void(0)" onclick="document.forms['searchForm'].submit()"><i class="fas fa-search"></i></a>
 										</div>
 									</div>
 								</div>
@@ -117,43 +117,43 @@
 										<li>
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="whiskey">
 												<input type="hidden" th:value="'whiskey'" name="keyword" />
-												<a href="#" onclick="document.forms['whiskey'].submit()">Whiskey <span class="fa fa-chevron-right"></span></a>
+												<a href="javascript:void(0)" onclick="document.forms['whiskey'].submit()">Whiskey <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 										<li>
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="vodka">
 												<input type="hidden" th:value="'vodka'" name="keyword" />
-												<a href="#" onclick="document.forms['vodka'].submit()">Vodka <span class="fa fa-chevron-right"></span></a>
+												<a href="javascript:void(0)" onclick="document.forms['vodka'].submit()">Vodka <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 										<li>
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="gin">
 												<input type="hidden" th:value="'gin'" name="keyword" />
-												<a href="#" onclick="document.forms['gin'].submit()">Gin <span class="fa fa-chevron-right"></span></a>
+												<a href="javascript:void(0)" onclick="document.forms['gin'].submit()">Gin <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 										<li>
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="rum">
 												<input type="hidden" th:value="'rum'" name="keyword" />
-												<a href="#" onclick="document.forms['rum'].submit()">Rum <span class="fa fa-chevron-right"></span></a>
+												<a href="javascript:void(0)" onclick="document.forms['rum'].submit()">Rum <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 										<li>
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="tequila">
 												<input type="hidden" th:value="'tequila'" name="keyword" />
-												<a href="#" onclick="document.forms['tequila'].submit()">Tequila <span class="fa fa-chevron-right"></span></a>
+												<a href="javascript:void(0)" onclick="document.forms['tequila'].submit()">Tequila <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 										<li>
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="brandy">
 												<input type="hidden" th:value="'brandy'" name="keyword" />
-												<a href="#" onclick="document.forms['brandy'].submit()">Brandy <span class="fa fa-chevron-right"></span></a>
+												<a href="javascript:void(0)" onclick="document.forms['brandy'].submit()">Brandy <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 										<li>
 											<form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="alcoholFree">
 												<input type="hidden" th:value="'alcohol free'" name="keyword" />
-												<a href="#" onclick="document.forms['alcoholFree'].submit()">No alcohol please! <span class="fa fa-chevron-right"></span></a>
+												<a href="javascript:void(0)" onclick="document.forms['alcoholFree'].submit()">No alcohol please! <span class="fa fa-chevron-right"></span></a>
 											</form>
 										</li>
 									</ul>

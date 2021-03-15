@@ -162,40 +162,70 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 col-md-4 ">
-                        <div class="sort w-100 text-center ftco-animate">
-                            <div class="img" style="background-image: url(images/kind-1.jpg);"></div>
-                            <h3>Brandy</h3>
-                        </div>
+                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="brandy">
+                            <div class="sort w-100 text-center ftco-animate">
+                                <input type="hidden" th:value="'brandy'" name="keyword" />
+                                <a href="javascript:void(0)" onclick="document.forms['brandy'].submit()">
+                                    <div class="img" style="background-image: url(images/kind-1.jpg);"></div>
+                                </a>
+                                <h3>Brandy</h3>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <div class="sort w-100 text-center ftco-animate">
-                            <div class="img" style="background-image: url(images/kind-2.jpg);"></div>
-                            <h3>Gin</h3>
-                        </div>
+                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="gin">
+                            <div class="sort w-100 text-center ftco-animate">
+                                <input type="hidden" th:value="'gin'" name="keyword" />
+                                <a href="javascript:void(0)" onclick="document.forms['gin'].submit()">
+                                    <div class="img" style="background-image: url(images/kind-2.jpg);"></div>
+                                </a>
+                                <h3>Gin</h3>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <div class="sort w-100 text-center ftco-animate">
-                            <div class="img" style="background-image: url(images/kind-3.jpg);"></div>
-                            <h3>Rum</h3>
-                        </div>
+                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="rum">
+                            <div class="sort w-100 text-center ftco-animate">
+                                <input type="hidden" th:value="'rum'" name="keyword" />
+                                <a href="javascript:void(0)" onclick="document.forms['rum'].submit()">
+                                    <div class="img" style="background-image: url(images/kind-3.jpg);"></div>
+                                </a>
+                                <h3>Rum</h3>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <div class="sort w-100 text-center ftco-animate">
-                            <div class="img" style="background-image: url(images/kind-4.jpg);"></div>
-                            <h3>Tequila</h3>
-                        </div>
+                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="tequila">
+                            <div class="sort w-100 text-center ftco-animate">
+                                <input type="hidden" th:value="'tequila'" name="keyword" />
+                                <a href="javascript:void(0)" onclick="document.forms['tequila'].submit()">
+                                    <div class="img" style="background-image: url(images/kind-4.jpg);"></div>
+                                </a>
+                                <h3>Tequila</h3>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <div class="sort w-100 text-center ftco-animate">
-                            <div class="img" style="background-image: url(images/kind-5.jpg);"></div>
-                            <h3>Vodka</h3>
-                        </div>
+                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="vodka">
+                            <div class="sort w-100 text-center ftco-animate">
+                                <input type="hidden" th:value="'vodka'" name="keyword" />
+                                <a href="javascript:void(0)" onclick="document.forms['vodka'].submit()">
+                                    <div class="img" style="background-image: url(images/kind-5.jpg);"></div>
+                                </a>
+                                <h3>Vodka</h3>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <div class="sort w-100 text-center ftco-animate">
-                            <div class="img" style="background-image: url(images/kind-6.jpg);"></div>
-                            <h3>Whiskey</h3>
-                        </div>
+                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="whiskey">
+                            <div class="sort w-100 text-center ftco-animate">
+                                <input type="hidden" th:value="'whiskey'" name="keyword" />
+                                <a href="javascript:void(0)" onclick="document.forms['whiskey'].submit()">
+                                    <div class="img" style="background-image: url(images/kind-6.jpg);"></div>
+                                </a>
+                                <h3>Whiskey</h3>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
