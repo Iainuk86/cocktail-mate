@@ -9,7 +9,6 @@ import java.util.List;
 
 @Data
 @Entity
-@NoArgsConstructor
 @Table(name="cocktail")
 public class Cocktail {
 
@@ -57,18 +56,5 @@ public class Cocktail {
             ingredients = new ArrayList<>();
 
         ingredients.add(ingredient);
-    }
-
-    public Cocktail(String name, boolean alcoholic, String taste, String flavour,
-                    String method, String glass, String ice, String garnish)
-    {
-        this.name = name;
-        this.alcoholic = alcoholic;
-        this.taste = taste;
-        this.flavourProfile = flavour;
-        this.method = method;
-        this.glass = glass;
-        this.ice = ice;
-        this.garnish = garnish;
     }
 }

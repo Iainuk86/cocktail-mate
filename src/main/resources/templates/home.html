@@ -8,24 +8,24 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css}"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
               crossorigin="anonymous">
 
         <!-- FontAwesome CSS -->
         <link rel="stylesheet"
-              href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+              th:href="@{https://use.fontawesome.com/releases/v5.5.0/css/all.css}"
               integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
               crossorigin="anonymous">
         <link rel="stylesheet"
               href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link th:href="@{${'https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap'}}" rel="stylesheet">
 
         <!-- Local CSS files -->
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" th:href="@{css/animate.css}">
+        <link rel="stylesheet" th:href="@{css/style.css}">
     </head>
 
     <body>
@@ -35,16 +35,16 @@
                 <div class="row">
                     <div class="col-md-6 d-flex align-items-center">
                         <p class="mb-0 phone pl-md-2">
-                            <a href="#" class="mr-2"><span class="fa fa-chain"></span> Link to portfolio site</a>
-                            <a href="mailto:iainuk@protonmail.com"><span class="fa fa-paper-plane mr-1"></span> iainuk@protonmail.com</a>
+                            <a th:href="@{#}" class="mr-2"><span class="fa fa-chain"></span> Link to portfolio site</a>
+                            <a th:href="@{${'mailto:iainuk@protonmail.com'}}"><span class="fa fa-paper-plane mr-1"></span> iainuk@protonmail.com</a>
                         </p>
                     </div>
                     <div class="col-md-6 d-flex justify-content-md-end">
                         <div class="social-media mr-4">
                             <p class="mb-0 d-flex">
-                                <a href="https://www.github.com/Iainuk86" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">GitHub</i></span></a>
-                                <a href="https://www.facebook.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                                <a href="https://www.linkedin.com" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">Linked In</i></span></a>
+                                <a th:href="@{https://www.github.com/Iainuk86}" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">GitHub</i></span></a>
+                                <a th:href="@{https://www.facebook.com}" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                                <a th:href="@{https://www.linkedin.com}" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">Linked In</i></span></a>
                             </p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <li class="nav-item"><a th:href="@{/cocktails}" class="nav-link">Cocktail List</a></li>
                         <li class="nav-item"><a th:href="@{/contact}" class="nav-link">Contact</a></li>
                         <li class="nav-item">
-                            <form method="POST" th:action="@{/cocktails}" th:object="${keyword}" id="searchForm" name="searchForm">
+                            <form method="POST" th:action="@{/cocktails}" id="searchForm" name="searchForm">
                                 <div class="container h-100">
                                     <div class="d-flex justify-content-center h-100">
                                         <div class="searchbar" onfocus="this.classList.add('wide')">
@@ -81,7 +81,7 @@
         <!-- End of Navbar -->
 
         <!-- Top background with headers section -->
-        <div class="hero-wrap" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+        <div class="hero-wrap" th:style="'background-image: url(images/bg_2.jpg);'" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -90,9 +90,9 @@
                             <h1 class="mb-4">It's <span>cocktail</span> night?</h1>
                             <h1 class="mb-4"><span>Ask</span> your <span>Mate</span>.</h1>
                             <p>
-                                <a th:href="@{cocktails}" class="btn btn-primary py-2 px-4">Show all</a>
-                                <a th:href="@{random}" class="btn btn-white btn-outline-white py-2 px-4">Random cocktail</a>
-                                <a th:href="@{helper}" class="btn btn-white btn-outline-white py-2 px-4">Help me decide</a>
+                                <a th:href="@{/cocktails}" class="btn btn-primary py-2 px-4">Show all</a>
+                                <a th:href="@{/random}" class="btn btn-white btn-outline-white py-2 px-4">Random cocktail</a>
+                                <a th:href="@{/helper}" class="btn btn-white btn-outline-white py-2 px-4">Help me decide</a>
                             </p>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
         <section class="ftco-section ftco-no-pb">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(images/cocktails/2.jpg);">
+                    <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" th:style="'background-image: url(images/cocktails/2.jpg);'">
                     </div>
                     <div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
                         <div class="heading-section">
@@ -175,66 +175,66 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 col-md-4 ">
-                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="brandy">
+                        <form method="POST" th:action="@{cocktails}" id="brandy">
                             <div class="sort w-100 text-center ftco-animate">
                                 <input type="hidden" th:value="'brandy'" name="keyword" />
                                 <a href="javascript:void(0)" onclick="document.forms['brandy'].submit()">
-                                    <div class="img" style="background-image: url(images/kind-1.jpg);"></div>
+                                    <div class="img" th:style="'background-image: url(images/kind-1.jpg);'"></div>
                                 </a>
                                 <h3>Brandy</h3>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="gin">
+                        <form method="POST" th:action="@{cocktails}" id="gin">
                             <div class="sort w-100 text-center ftco-animate">
                                 <input type="hidden" th:value="'gin'" name="keyword" />
                                 <a href="javascript:void(0)" onclick="document.forms['gin'].submit()">
-                                    <div class="img" style="background-image: url(images/kind-2.jpg);"></div>
+                                    <div class="img" th:style="'background-image: url(images/kind-2.jpg);'"></div>
                                 </a>
                                 <h3>Gin</h3>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="rum">
+                        <form method="POST" th:action="@{cocktails}" id="rum">
                             <div class="sort w-100 text-center ftco-animate">
                                 <input type="hidden" th:value="'rum'" name="keyword" />
                                 <a href="javascript:void(0)" onclick="document.forms['rum'].submit()">
-                                    <div class="img" style="background-image: url(images/kind-3.jpg);"></div>
+                                    <div class="img" th:style="'background-image: url(images/kind-3.jpg);'"></div>
                                 </a>
                                 <h3>Rum</h3>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="tequila">
+                        <form method="POST" th:action="@{cocktails}" id="tequila">
                             <div class="sort w-100 text-center ftco-animate">
                                 <input type="hidden" th:value="'tequila'" name="keyword" />
                                 <a href="javascript:void(0)" onclick="document.forms['tequila'].submit()">
-                                    <div class="img" style="background-image: url(images/kind-4.jpg);"></div>
+                                    <div class="img" th:style="'background-image: url(images/kind-4.jpg);'"></div>
                                 </a>
                                 <h3>Tequila</h3>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="vodka">
+                        <form method="POST" th:action="@{cocktails}" id="vodka">
                             <div class="sort w-100 text-center ftco-animate">
                                 <input type="hidden" th:value="'vodka'" name="keyword" />
                                 <a href="javascript:void(0)" onclick="document.forms['vodka'].submit()">
-                                    <div class="img" style="background-image: url(images/kind-5.jpg);"></div>
+                                    <div class="img" th:style="'background-image: url(images/kind-5.jpg);'"></div>
                                 </a>
                                 <h3>Vodka</h3>
                             </div>
                         </form>
                     </div>
                     <div class="col-lg-2 col-md-4 ">
-                        <form method="POST" th:action="@{cocktails}" th:object="${keyword}" id="whiskey">
+                        <form method="POST" th:action="@{cocktails}" id="whiskey">
                             <div class="sort w-100 text-center ftco-animate">
                                 <input type="hidden" th:value="'whiskey'" name="keyword" />
                                 <a href="javascript:void(0)" onclick="document.forms['whiskey'].submit()">
-                                    <div class="img" style="background-image: url(images/kind-6.jpg);"></div>
+                                    <div class="img" th:style="'background-image: url(images/kind-6.jpg);'"></div>
                                 </a>
                                 <h3>Whiskey</h3>
                             </div>
@@ -254,9 +254,9 @@
                             <h2 class="ftco-heading-2 logo"><a th:href="@{/home}">Cocktail <span>Mate</span></a></h2>
                             <p>Helping you when you can't help yourself.</p>
                             <ul class="ftco-footer-social list-unstyled mt-2">
-                                <li class="ftco-animate"><a href="https://www.github.com/Iainuk86"><span class="fa fa-github"></span></a></li>
-                                <li class="ftco-animate"><a href="https://www.facebook.com"><span class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="https://www.linkedin.com"><span class="fa fa-linkedin"></span></a></li>
+                                <li class="ftco-animate"><a th:href="@{https://www.github.com/Iainuk86}"><span class="fa fa-github"></span></a></li>
+                                <li class="ftco-animate"><a th:href="@{https://www.facebook.com}"><span class="fa fa-facebook"></span></a></li>
+                                <li class="ftco-animate"><a th:href="@{https://www.linkedin.com}"><span class="fa fa-linkedin"></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -278,9 +278,9 @@
                             <div class="block-23 mb-3">
                                 <ul>
                                     <li><span class="icon fa fa-map-pin"></span><span class="text">Lewisham, Sydney, Australia</span></li>
-                                    <li><a href="#"><span class="icon fa fa-globe"></span><span class="text">Portfolio</span></a></li>
-                                    <li><a href="tel:0458633414"><span class="icon fa fa-phone"></span><span class="text">0458 633 414</span></a></li>
-                                    <li><a href="mailto:iainuk@protonmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">iainuk@protonmail.com</span></a></li>
+                                    <li><a th:href="@{#}"><span class="icon fa fa-globe"></span><span class="text">Portfolio</span></a></li>
+                                    <li><a th:href="@{tel:0458633414}"><span class="icon fa fa-phone"></span><span class="text">0458 633 414</span></a></li>
+                                    <li><a th:href="@{${'mailto:iainuk@protonmail.com'}}"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">iainuk@protonmail.com</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -290,15 +290,14 @@
         </footer>
         <!-- End of footer -->
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-migrate-3.0.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/jquery.easing.1.3.js"></script>
-        <script src="js/jquery.waypoints.min.js"></script>
-        <script src="js/jquery.stellar.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.animateNumber.min.js"></script>
-        <script src="js/main.js"></script>
+        <script th:src="@{js/jquery.min.js}"></script>
+        <script th:src="@{js/jquery-migrate-3.0.1.min.js}"></script>
+        <script th:src="@{js/jquery.easing.1.3.js}"></script>
+        <script th:src="@{js/jquery.waypoints.min.js}"></script>
+        <script th:src="@{js/jquery.stellar.min.js}"></script>
+        <script th:src="@{js/owl.carousel.min.js}"></script>
+        <script th:src="@{js/jquery.animateNumber.min.js}"></script>
+        <script th:src="@{js/main.js}"></script>
 
     </body>
 </html>

@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@NoArgsConstructor
 @Table(name="ingredient")
 public class Ingredient {
 
@@ -31,14 +30,6 @@ public class Ingredient {
                     CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name="cocktail_id")
     private Cocktail cocktail;
-
-    public Ingredient(String name, String metric, String imp, Cocktail cocktail)
-    {
-        this.name = name;
-        this.quantityMetric = metric;
-        this.quantityImperial = imp;
-        this.cocktail = cocktail;
-    }
 
     public String toString()
     {
