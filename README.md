@@ -17,6 +17,7 @@ There are still a few things that need to be updated in the near future, such as
 - The random cocktail nextInt() function is hardcoded. Need to get rid of that for scalability.
 - Add some columns to MySQL database to allow for cleaner and easier MySQL queries in the controller/service. Currently too ugly and convoluted.
 - Find an alternative for the mailto: links to ensure it is supported on all browsers.
+- Write some unit tests.
 - Add a 404 page.
 - Further cut down the redundant template code as much as possible to reduce loading time as well make it easier to read and locate elements.
 
