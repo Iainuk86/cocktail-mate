@@ -18,5 +18,6 @@ There are still a few things that need to be updated in the near future, such as
 - Add some columns to MySQL database to allow for cleaner and easier MySQL queries in the controller/service. Currently too ugly and convoluted.
 - Find an alternative for the mailto: links to ensure it is supported on all browsers.
 - Add a 404 page.
+- Further cut down the redundant template code as much as possible to reduce loading time as well make it easier to read and locate elements.
 
 Once I start implementing these changes, I will also dive deeper into either React or Angular and rebuild the entire front-end.
