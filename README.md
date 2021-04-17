@@ -12,7 +12,7 @@ There are still a few things that need to be updated in the near future, such as
 - It is not yet fully responsive, particularly the Navbar on small screens.
 - Pagination of the cocktail list, to speed up loading.
 - Add Gzip compression to further decrease loading time.
-- Contact form still uses Gmail SMTP. Changing to use the SendGrid API ensures message delivery and no Google Security interference.
+- Contact form still uses Gmail SMTP. Changing to use the SendGrid API ensures message delivery with no Google Security interference.
 - Add more cocktails to the database so more 'Helper' questions can be added.
 - With more cocktails and queries, a service layer needs to be added. I did not add one in the first place as it is currently very simple to implement in the controller.
 - The random cocktail nextInt() function is hardcoded. Need to get rid of that for scalability.
