@@ -2,6 +2,7 @@
 App to browse cocktails with their recipes for some weekend (or weekday, no judgement) inspiration.
 
 The back-end was built using Spring Boot with multiple dependencies, one of which was Spring Boot Data JPA to connect to a self-compiled MySQL database.
+I have also implemented a Rest API for all cocktail data, which can be accessed at cocktailmate.net/api/cocktails
 
 The front-end began life as a template, which turned out to be a hindrance more than help. It gave me hardly any freedom to create and move things around, so a lot of time was spent diving into the template code to understand why it was behaving in such a stubborn manner. It was eventually adapted to use the Thymeleaf template engine as well as Bootstrap CSS and JavaScript/JQuery functionality.
 
