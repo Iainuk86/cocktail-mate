@@ -1,4 +1,4 @@
-package org.iainuk.cocktailapp;
+package dev.iainmcintosh.cocktailmate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

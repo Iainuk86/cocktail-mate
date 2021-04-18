@@ -1,8 +1,8 @@
-package org.iainuk.cocktailapp.controllers;
+package dev.iainmcintosh.cocktailmate.controllers;
 
-import org.iainuk.cocktailapp.entities.Cocktail;
-import org.iainuk.cocktailapp.entities.HelpInput;
-import org.iainuk.cocktailapp.dao.CocktailRepo;
+import dev.iainmcintosh.cocktailmate.dao.CocktailRepo;
+import dev.iainmcintosh.cocktailmate.entities.Cocktail;
+import dev.iainmcintosh.cocktailmate.entities.HelpInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

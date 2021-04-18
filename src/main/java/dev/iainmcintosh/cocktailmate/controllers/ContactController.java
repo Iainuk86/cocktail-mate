@@ -1,10 +1,11 @@
-package org.iainuk.cocktailapp.controllers;
+package dev.iainmcintosh.cocktailmate.controllers;
 
-import org.iainuk.cocktailapp.entities.Contact;
+import dev.iainmcintosh.cocktailmate.entities.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Date;
 
 @Controller
+@EnableAsync
 @RequestMapping("/contact")
 public class ContactController {
 
@@ -30,12 +32,13 @@ public class ContactController {
         return "contact";
     }
 
+    @Async
     @PostMapping
     public String sendForm(@ModelAttribute("contact") Contact contact, Model model) throws MessagingException
     {
-        String content = contact.getMessage();
-        content += "<br><br>Sent from: " + contact.getName();
-        content += "<br><br>Email me back on: " + contact.getEmail();
+        String content = "You have a new message on CocktailMate. Sent from: " + contact.getName();
+        content += "<br><br>Email address: " + contact.getEmail();
+        content += "<br><br>Message:<br>" + contact.getMessage();
 
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
@@ -46,6 +49,6 @@ public class ContactController {
         mimeMessageHelper.setSentDate(new Date());
         javaMailSender.send(mimeMessage);
 
-        return "home";
+        return "redirect:/home";
     }
 }

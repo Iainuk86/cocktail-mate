@@ -1,4 +1,4 @@
-package org.iainuk.cocktailapp.entities;
+package dev.iainmcintosh.cocktailmate.entities;
 
 import lombok.Data;
 

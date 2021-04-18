@@ -1,7 +1,6 @@
-package org.iainuk.cocktailapp.entities;
+package dev.iainmcintosh.cocktailmate.entities;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;

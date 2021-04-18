@@ -35,16 +35,15 @@
 				<div class="row">
 					<div class="col-md-6 d-flex align-items-center">
 						<p class="mb-0 phone pl-md-2">
-							<a th:href="@{#}" class="mr-2"><span class="fa fa-chain"></span> Link to portfolio site</a>
+							<a th:href="@{http://www.iainmcintosh.dev}" class="mr-2"><span class="fa fa-chain"></span> My Portfolio</a>
 							<a th:href="@{${'mailto:iainuk@protonmail.com'}}"><span class="fa fa-paper-plane mr-1"></span> iainuk@protonmail.com</a>
 						</p>
 					</div>
 					<div class="col-md-6 d-flex justify-content-md-end">
 						<div class="social-media mr-4">
 							<p class="mb-0 d-flex">
-								<a th:href="@{https://www.github.com}" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">GitHub</i></span></a>
-								<a th:href="@{https://www.facebook.com}" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-								<a th:href="@{https://www.linkedin.com}" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">Linked In</i></span></a>
+								<a th:href="@{https://www.github.com/Iainuk86}" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">GitHub</i></span></a>
+								<a th:href="@{https://www.linkedin.com/in/iain-mcintosh-b6057420b}" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">Linked In</i></span></a>
 							</p>
 						</div>
 					</div>
@@ -138,7 +137,7 @@
 											<span class="fa fa-globe"></span>
 										</div>
 										<div class="text">
-										<p><span>Portfolio: </span> <a th:href="@{#}">LINK TO PORTFOLIO</a></p>
+										<p><span>Portfolio: </span> <a th:href="@{http://www.iainmcintosh.dev}">www.iainmcintosh.dev</a></p>
 										</div>
 									</div>
 								</div>
@@ -151,7 +150,7 @@
 									<div class="col-md-8 offset-md-2 justify-content-center">
 										<div class="contact-wrap w-100 p-md-5 p-4">
 											<h3 class="mb-4">Or send me a message ...</h3>
-											<form th:method="POST" th:action="@{/contact}" th:object="${contact}" id="contactForm" name="contactForm" class="contactForm">
+											<form th:method="POST" th:action="@{/contact}" th:object="${contact}" id="contactForm" name="contactForm" class="contactForm" onsubmit="alert('Your message has been sent.')">
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
@@ -179,7 +178,7 @@
 													</div>
 													<div class="col-md-12">
 														<div class="form-group">
-															<input type="submit" onclick="alert('Your message has been sent.')" value="Send Message" class="btn btn-primary">
+															<input type="submit" value="Send Message" class="btn btn-primary">
 															<div class="submitting"></div>
 														</div>
 													</div>
@@ -206,9 +205,8 @@
 							<h2 class="ftco-heading-2 logo"><a th:href="@{/home}">Cocktail <span>Mate</span></a></h2>
 							<p>Helping you when you can't help yourself.</p>
 							<ul class="ftco-footer-social list-unstyled mt-2">
-								<li class="ftco-animate"><a th:href="@{https://www.github.com}"><span class="fa fa-github"></span></a></li>
-								<li class="ftco-animate"><a th:href="@{https://www.facebook.com}"><span class="fa fa-facebook"></span></a></li>
-								<li class="ftco-animate"><a th:href="@{https://www.linkedin.com}"><span class="fa fa-linkedin"></span></a></li>
+								<li class="ftco-animate"><a th:href="@{https://www.github.com/Iainuk86}"><span class="fa fa-github"></span></a></li>
+								<li class="ftco-animate"><a th:href="@{https://www.linkedin.com/in/iain-mcintosh-b6057420b}"><span class="fa fa-linkedin"></span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -230,7 +228,7 @@
 							<div class="block-23 mb-3">
 								<ul>
 									<li><span class="icon fa fa-map-pin"></span><span class="text">Lewisham, Sydney, Australia</span></li>
-									<li><a th:href="@{#}"><span class="icon fa fa-globe"></span><span class="text">Portfolio</span></a></li>
+									<li><a th:href="@{http://www.iainmcintosh.dev}"><span class="icon fa fa-globe"></span><span class="text">www.iainmcintosh.dev</span></a></li>
 									<li><a th:href="@{tel:0458633414}"><span class="icon fa fa-phone"></span><span class="text">0458 633 414</span></a></li>
 									<li><a th:href="@{${'mailto:iainuk@protonmail.com'}}"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">iainuk@protonmail.com</span></a></li>
 								</ul>

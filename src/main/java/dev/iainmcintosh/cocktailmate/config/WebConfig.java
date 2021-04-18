@@ -1,4 +1,4 @@
-package org.iainuk.cocktailapp.config;
+package dev.iainmcintosh.cocktailmate.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

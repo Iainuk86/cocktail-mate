@@ -1,4 +1,4 @@
-package org.iainuk.cocktailapp.config;
+package dev.iainmcintosh.cocktailmate.config;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
